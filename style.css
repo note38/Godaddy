@@ -12,7 +12,7 @@
     align-items: center;
     height: 4rem;
     background-color: #2B2B2B;
-    padding: 0 4rem;
+    padding: 0 3rem;
 }
 
 /* <!-- LEFT NAV --> */
@@ -23,14 +23,14 @@
 
 /* <!-- RIGHT NAV --> */
 .right-nav-bar {
-    width: 15%;
+    width: max-content;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    
   }
   
   .right-nav-bar ul {
-    width: 70%;
+    
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -38,13 +38,10 @@
     margin: 0; 
     padding: 0; 
     font-size: .7rem;
+    
   }
-  .right-nav-bar ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    color: white;
-    text-decoration: none; 
+  .right-nav-bar ul li{
+    width: max-content;
   }
   
   .right-nav-bar ul li a span {
@@ -52,13 +49,16 @@
   }
   
   .right-nav-bar ul li a span i {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   .right-nav-bar a {
     padding: 0 0.5rem;
     text-decoration: none;
     color: white;
+  }
+  .right-nav-bar .ul-responsive{
+    display: none;
   }
 /* <!-- PRIMARY PANEL --> */
 .primary-panel{
@@ -79,9 +79,11 @@
     padding: 2rem 0;
 }
 .primary-panel-content button{
+    color: white;
+    background-color: #2B2B2B;
     border-radius: 5px;
     padding: 1rem 2rem;
-    border: solid #2B2B2B 3px;
+    border: none;
 }
 /* <!-- CARD --> */
 .card-conatiner{
@@ -251,41 +253,52 @@
 /* <!--- GUIDE -->  */
 .guide-container {
     height: 500px;
-    background-image: url('/assets/image/banner1.jpg');
+    background-image: url(https://img1.wsimg.com/cdn/Image/All/All/6/APAC/eed6ee84-b72c-4709-aad2-0dc429ecb807/img-guide-apac-landscape.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    
+}
+.section-container{
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
 }
-.section-container {
+.section-container img{
+    position: absolute;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.section-container .guide-content {
     display: flex;
     justify-content: space-around;
     width: 100%;
 }
-.guide-content {
+.guide-content-section {
     display: flex;
     flex-direction: column;
 }
-.guide-content section a{
+.guide-content-section section a{
     text-decoration: none;
     color: black;
     font-weight: 700;
 }
-.guide-content section h2{
+.guide-content-section section h2{
     font-size: 2.8rem;
     margin: 2.5rem 0 1rem 0 ;
 }
-.guide-content section p{
+.guide-content-section section p{
     font-size: .9rem;
     margin: 0 0 1rem 0;
 }
-.guide-content section h4{
+.guide-content-section section h4{
     font-size: .9rem;
     margin: 0 0 1rem 0;
 }
-.guide-content section button{
+.guide-content-section section button{
     font-weight: bold;
     border-radius: 4px;
     font-size: 1rem;
@@ -433,6 +446,23 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
     }
     }
 
+@media (max-width: 480px) {
+    .guide-content section h2 {
+        font-size: 1.8rem;
+    }
+
+    .guide-content section p {
+        font-size: 0.7rem;
+    }
+
+    .guide-content section h4 {
+        font-size: 0.7rem;
+    }
+
+    .guide-content section button {
+        font-size: 0.8rem;
+    }
+}
 .styled-input label {
     color: #999;
     padding: 1.3rem 30px 1rem 30px;
@@ -518,6 +548,11 @@ textarea {
     }
    }
 @media (max-width: 1300px){
+/* <!-- HEADER NAV --> */
+    .nav-bar-container{
+        padding: 0 1rem;
+    }
+   
 /* <!-- CARD --> */
     .card-conatiner section {
         width: 90%;
@@ -530,10 +565,18 @@ textarea {
     .row h1{
         font-size: 3rem;
     }
+}
+
 @media (max-width: 768px) {
     .nav-bar-container{
         padding: 0 .5rem;
     }
+     .right-nav-bar ul{
+        display: none;
+    }
+    .right-nav-bar .ul-responsive{
+        display: flex;
+     }
     /* PRIMARY PANEL */
     .primary-panel{
         justify-content: center;
